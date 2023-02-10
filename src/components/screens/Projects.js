@@ -3,6 +3,7 @@ import { ProjectCard } from "../controls/ProjectCard";
 import projImg1 from "../../assets/img/project-img1.png";
 import projImg2 from "../../assets/img/project-img2.png";
 import projImg3 from "../../assets/img/project-img3.png";
+import navIcon2 from "../../assets/img/nav-icon-git.png";
 import colorSharp2 from "../../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -114,6 +115,14 @@ export const Projects = () => {
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
+                  <p style={{ textAlign: "center" }}>
+                    You can find all my Projects in my GitHub:
+                    <div className="social-icon">
+                      <a href="https://github.com/jdcastel">
+                        <img src={navIcon2} alt="GitHub" />
+                      </a>
+                    </div>
+                  </p>
                 </div>
               )}
             </TrackVisibility>

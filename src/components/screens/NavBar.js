@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../../assets/img/logo1.png';
-import { HashLink } from 'react-router-hash-link';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+import logo from "../../assets/img/logo1.png";
+import { HashLink } from "react-router-hash-link";
+import { BrowserRouter as Router } from "react-router-dom";
 
 export const NavBar = () => {
-
-  const [activeLink, setActiveLink] = useState('home');
+  const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,16 +15,16 @@ export const NavBar = () => {
       } else {
         setScrolled(false);
       }
-    }
+    };
 
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
-  }
+  };
 
   return (
     <Router>
@@ -46,31 +43,46 @@ export const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link
-                href="#home"
+                href="#homes"
                 className={
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
+                  activeLink === "homes" ? "active navbar-link" : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink("home")}
+                onClick={() => onUpdateActiveLink("homes")}
               >
                 Home
               </Nav.Link>
               <Nav.Link
-                href="#abouts"
+                href="#profiles"
                 className={
-                  activeLink === "abouts" ? "active navbar-link" : "navbar-link"
+                  activeLink === "profiles"
+                    ? "active navbar-link"
+                    : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink("abouts")}
+                onClick={() => onUpdateActiveLink("profiles")}
               >
-                About
+                Profile
               </Nav.Link>
               <Nav.Link
-                href="#skills"
+                href="#expertises"
                 className={
-                  activeLink === "skills" ? "active navbar-link" : "navbar-link"
+                  activeLink === "expertises"
+                    ? "active navbar-link"
+                    : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink("skills")}
+                onClick={() => onUpdateActiveLink("expertises")}
               >
-                Skills
+                Expertise
+              </Nav.Link>
+              <Nav.Link
+                href="#experiences"
+                className={
+                  activeLink === "experiences"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("experiences")}
+              >
+                Experience
               </Nav.Link>
               <Nav.Link
                 href="#projects"
@@ -96,4 +108,4 @@ export const NavBar = () => {
       </Navbar>
     </Router>
   );
-}
+};

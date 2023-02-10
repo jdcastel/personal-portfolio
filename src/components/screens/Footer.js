@@ -9,8 +9,6 @@ export const Footer = () => {
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-          {/* Subscription form???? */}
-          {/* <MailchimpForm /> */}
           <Col size={12} sm={6}>
             <img
               src={logo}
@@ -30,10 +28,10 @@ export const Footer = () => {
                 <img src={navIcon3} alt="Instagram" />
               </a>
             </div>
-            <p>Copyright 2022. All Rights Reserved</p>
+            <p>Made with Passion by Juan Castelblanco. Copyright 2022. All Rights Reserved</p>
           </Col>
         </Row>
       </Container>
     </footer>
   );
-}
+};

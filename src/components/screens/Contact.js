@@ -4,9 +4,9 @@ import contactImg from "../../assets/img/contact-img.svg";
 import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon-git.png";
 import navIcon3 from "../../assets/img/nav-icon3.svg";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
-import '../styles/contact.scss'
+import "animate.css";
+import TrackVisibility from "react-on-screen";
+import "../styles/contact.scss";
 import {
   faAngular,
   faCss3,
@@ -15,26 +15,26 @@ import {
   faJsSquare,
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Contact = () => {
   const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  }
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send');
+  const [buttonText, setButtonText] = useState("Send");
   const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
-      setFormDetails({
-        ...formDetails,
-        [category]: value
-      })
-  }
+    setFormDetails({
+      ...formDetails,
+      [category]: value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,9 +50,12 @@ export const Contact = () => {
     let result = await response.json();
     setFormDetails(formInitialDetails);
     if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
+      setStatus({ succes: true, message: "Message sent successfully" });
     } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+      setStatus({
+        succes: false,
+        message: "Something went wrong, please try again later.",
+      });
     }
   };
 
@@ -182,4 +185,4 @@ export const Contact = () => {
       </Container>
     </section>
   );
-}
+};

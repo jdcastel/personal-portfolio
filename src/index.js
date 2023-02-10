@@ -7,14 +7,14 @@ import Loader from './components/utils/Loader';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const App = React.lazy(() => {
   return new Promise(resolve =>{
-    setTimeout(()=> resolve(import("./App")),400); 
+    setTimeout(()=> resolve(import("./App")),500); 
   })
 });
 
 root.render(
   <React.StrictMode>
     <Suspense fallback={<Loader />}>
-      <App />
+        <App />
     </Suspense>
   </React.StrictMode>
 );
