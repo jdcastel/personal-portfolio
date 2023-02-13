@@ -15,9 +15,9 @@ import Experience from './components/screens/Experience';
 function App() {
   return (
     <div className="App">
-        <Cursor />
-        <Particle />
+      <Cursor />
         <NavBar />
+        <Particle />
         <Home />
         <Profile />
         <Expertise />
